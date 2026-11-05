@@ -1,0 +1,182 @@
+/* =========================================================
+   styles.css – تنسيق واحد مشترك لكل صفحات الموقع
+   الهوية: اللون الأساسي بني، الثانوي برتقالي، والخلفية كريمية محايدة
+   الخط: Cairo (واضح للعربية)
+   ========================================================= */
+
+:root {
+  --brown: #5d4037;
+  --brown-dark: #3e2c25;
+  --brown-mid: #6d4c41;
+  --cream: #fff8f0;
+  --sand: #f1e4d3;
+  --orange: #d9822b;
+  --text: #3e2c25;
+  --muted: #7a6558;
+  --line: #e3d3bf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Cairo", sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--brown); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+/* ---------- الأزرار (ألوان Bootstrap مغيّرة إلى البني) ---------- */
+.btn-primary, .btn-brown {
+  --bs-btn-bg: var(--brown);
+  --bs-btn-border-color: var(--brown);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--orange);
+  --bs-btn-hover-border-color: var(--orange);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--orange);
+  --bs-btn-active-border-color: var(--orange);
+  font-weight: 700;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--brown);
+  --bs-btn-border-color: var(--brown);
+  --bs-btn-hover-bg: var(--brown);
+  --bs-btn-hover-border-color: var(--brown);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--brown);
+  --bs-btn-active-border-color: var(--brown);
+}
+
+/* ---------- الهيدر وشريط التنقل ---------- */
+.site-header { background: var(--brown); border-bottom: 3px solid var(--orange); }
+.navbar { padding-top: .7rem; padding-bottom: .7rem; }
+.navbar-brand { font-size: 1rem; font-weight: 700; }
+.brand-mark {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 10px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 700;
+}
+.nav-link { color: var(--sand) !important; }
+.nav-link:hover, .nav-link.active { color: #fff !important; border-bottom: 2px solid var(--orange); }
+
+/* ---------- عنوان الصفحة (Hero) ---------- */
+.page-hero { background: var(--brown-mid); color: #fff; padding: 3rem 0 4.5rem; }
+.page-hero h1 { font-size: clamp(1.7rem, 5vw, 2.5rem); font-weight: 700; margin: .3rem 0; }
+.page-hero p { max-width: 650px; color: var(--sand); }
+.eyebrow { color: #ffd9a8; font-size: .9rem; font-weight: 700; }
+
+/* ---------- الأقسام والعناوين ---------- */
+.section { margin-top: 2.5rem; }
+.section-title {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brown);
+  border-bottom: 3px solid var(--orange);
+  padding-bottom: 4px;
+  margin-bottom: 1.2rem;
+}
+.link-all { color: var(--brown); font-weight: 700; }
+
+/* ---------- الشارات والتصنيفات ---------- */
+.category-badge, .tag {
+  background: var(--sand);
+  color: var(--brown);
+  font-weight: 600;
+  text-decoration: none;
+}
+.tag { display: inline-block; padding: 2px 14px; border-radius: 999px; font-size: .85rem; background: var(--orange); color: #fff; }
+.categories { display: flex; flex-wrap: wrap; gap: 10px; }
+.categories .category-badge { padding: 10px 20px; font-size: 1rem; }
+.categories .category-badge:hover { background: var(--orange); color: #fff; }
+
+/* ---------- الفلترة (صفحة الفعاليات) ---------- */
+.filter-section { margin-top: -2rem; position: relative; }
+.filter-panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 18px rgba(62,44,37,.1); }
+.form-label { font-weight: 600; font-size: .9rem; }
+.form-control, .form-select { border-color: var(--line); }
+.form-control:focus, .form-select:focus { border-color: var(--brown); box-shadow: 0 0 0 .2rem rgba(93,64,55,.15); }
+
+/* ---------- بطاقات الفعاليات ---------- */
+.events-section { padding-top: 3rem; padding-bottom: 3rem; }
+.event-card, .card { height: 100%; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.event-card:hover { box-shadow: 0 8px 20px rgba(62,44,37,.12); }
+.event-image { width: 100%; height: 200px; object-fit: cover; display: block; }
+.card-img-top { height: 190px; object-fit: cover; }
+.event-card-body { padding: 1.1rem; }
+.event-meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; color: var(--muted); font-size: .85rem; }
+.event-title { font-size: 1.1rem; font-weight: 700; margin: .8rem 0 .4rem; }
+.event-description { color: var(--muted); font-size: .9rem; }
+.event-detail-note { margin: .8rem 0 1rem; padding: .8rem; border-right: 3px solid var(--orange); border-radius: 8px; background: var(--cream); color: var(--muted); font-size: .85rem; }
+.event-detail-note strong { color: var(--text); }
+.event-extra-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; padding: .6rem .8rem 0; }
+.event-extra-gallery img { width: 100%; height: 90px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+.learning-project { padding: 1.5rem; border: 1px solid var(--line); border-radius: 12px; background: var(--sand); }
+.learning-project p { color: var(--muted); }
+
+/* ---------- صفحة تفاصيل الفعالية ---------- */
+.event-detail-page { min-height: 60vh; }
+.event-detail-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: clamp(1rem, 3vw, 2rem); }
+.event-detail-heading h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--brown); font-weight: 700; }
+.event-detail-main-image { width: 100%; max-height: 420px; object-fit: cover; border-radius: 10px; }
+.detail-info-box { height: 100%; display: flex; flex-direction: column; gap: .3rem; padding: 1rem; border-radius: 10px; background: var(--cream); border: 1px solid var(--line); }
+.detail-info-box strong { color: var(--brown); }
+.detail-info-box span, .event-detail-description { color: var(--muted); }
+.event-detail-gallery img { width: 100%; height: 260px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); }
+.related-card .event-image { height: 150px; }
+
+/* ---------- الصفحة الرئيسية: السلايدر ---------- */
+#slider { border-radius: 14px; overflow: hidden; background: var(--brown); }
+.slide-img { width: 100%; height: 430px; object-fit: cover; display: block; }
+.slide-caption {
+  position: absolute;
+  right: 0; left: 0; bottom: 0;
+  padding: 2.5rem 4rem 2.8rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(62,44,37,.96) 25%, rgba(62,44,37,0));
+}
+.slide-caption h3 { font-size: 1.8rem; font-weight: 700; margin: .6rem 0 .3rem; }
+.slide-meta { margin-bottom: .8rem; color: var(--sand); }
+#slider .carousel-indicators { margin-bottom: .6rem; }
+#slider .carousel-indicators [data-bs-target] { background-color: #fff; }
+#slider .carousel-control-prev-icon,
+#slider .carousel-control-next-icon { background-color: var(--orange); border-radius: 50%; background-size: 50%; width: 2.6rem; height: 2.6rem; }
+
+/* ---------- الجداول ---------- */
+.table thead { background: var(--brown); color: #fff; }
+
+/* ---------- عن الدليل ---------- */
+.about-logo { width: 100%; max-width: 280px; border-radius: 12px; border: 1px solid var(--line); }
+.team-card { height: 100%; padding: 1.2rem; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.team-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: .6rem; }
+.team-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--brown); margin-bottom: .1rem; }
+.team-card .member-id { color: var(--muted); font-size: .85rem; }
+
+/* ---------- اتصل بنا ---------- */
+.contact-info { height: 100%; padding: 1.5rem; color: #fff; background: var(--brown); border-radius: 12px; }
+.contact-info h2 { font-size: 1.3rem; font-weight: 700; }
+.contact-info a { color: #fff; }
+
+/* ---------- التذييل ---------- */
+.site-footer { background: var(--brown); color: var(--sand); padding: 2rem 0 1rem; margin-top: 3rem; border-top: 3px solid var(--orange); }
+.site-footer h4 { color: #fff; font-size: 1.1rem; font-weight: 700; }
+.site-footer a { color: #fff; margin-left: 12px; }
+.copyright { border-top: 1px solid var(--muted); padding-top: 12px; font-size: .9rem; }
+
+/* ---------- التجاوب مع الشاشات الصغيرة ---------- */
+@media (max-width: 767px) {
+  .slide-img { height: 240px; }
+  .slide-caption { position: static; padding: 1rem 1.2rem 2.6rem; background: var(--brown); }
+  .slide-caption h3 { font-size: 1.3rem; }
+  .page-hero { padding: 2.2rem 0 3.5rem; }
+  .event-image { height: 190px; }
+}
