@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="صفحة جميع فعاليات الجامعة الافتراضية السورية.">
+  <title>كل الفعاليات | دليل فعاليات الجامعة الافتراضية</title>
+
+  <!-- Bootstrap عبر CDN وفق متطلبات الوظيفة -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- رأس الصفحة وشريط التنقل -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <span class="brand-mark">O</span>
+          <span>دليل فعاليات الجامعة الافتراضية</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="فتح القائمة">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="events.html">كل الفعاليات</a></li>
+            <li class="nav-item"><a class="nav-link" href="event.html">تفاصيل الفعالية</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- عنوان الصفحة -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">اكتشف وشارك</span>
+        <h1>كل الفعاليات</h1>
+        <p>هنا تلتقي المعرفة بالإبداع؛ اكتشف فعاليات تثري تجربتك الجامعية، وتفتح أمامك آفاقاً جديدة للتعلّم والتواصل والمشاركة.</p>
+      </div>
+    </section>
+
+    <!-- البحث والفلترة: بحث نصي + تصنيف + موقع + نطاق تاريخ -->
+    <section class="container filter-section" aria-labelledby="filterHeading">
+      <div class="filter-panel">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <div>
+            <h2 id="filterHeading" class="section-title mb-1">ابحث عن فعالية</h2>
+            <p class="text-muted mb-0 small">يمكنك الجمع بين أكثر من معيار للفلترة.</p>
+          </div>
+          <button class="btn btn-outline-secondary btn-sm" type="button" id="resetFilters">إعادة ضبط الفلاتر</button>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <label for="searchInput" class="form-label">كلمة البحث</label>
+            <input type="search" class="form-control" id="searchInput" placeholder="مثال: البرمجة، الفن...">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <label for="categoryFilter" class="form-label">التصنيف</label>
+            <select class="form-select" id="categoryFilter">
+              <option value="">كل التصنيفات</option>
+              <option value="ثقافة">ثقافة</option>
+              <option value="رياضة">رياضة</option>
+              <option value="موسيقى">موسيقى</option>
+              <option value="تعليم">تعليم</option>
+              <option value="عائلي">عائلي</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-2">
+            <label for="locationFilter" class="form-label">الموقع</label>
+            <select class="form-select" id="locationFilter">
+              <option value="">كل المواقع</option>
+              <option value="دمشق">دمشق</option>
+              <option value="حلب">حلب</option>
+              <option value="حمص">حمص</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-2">
+            <label for="dateFilter" class="form-label">التاريخ</label>
+            <select class="form-select" id="dateFilter">
+              <option value="">كل التواريخ</option>
+              <option value="2026-10-25">الأحد 25 أكتوبر 2026</option>
+              <option value="2026-11-05">الخميس 5 نوفمبر 2026</option>
+              <option value="2026-11-09">الاثنين 9 نوفمبر 2026</option>
+              <option value="2026-11-14">السبت 14 نوفمبر 2026</option>
+              <option value="2026-11-22">الأحد 22 نوفمبر 2026</option>
+              <option value="2026-11-27">الجمعة 27 نوفمبر 2026</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+            <button class="btn btn-primary w-100" type="button" id="searchButton">بحث</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قائمة البطاقات -->
+    <section class="container events-section" aria-labelledby="eventsHeading">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+        <div>
+          <h2 id="eventsHeading" class="section-title mb-1">الفعاليات المتاحة</h2>
+          <p class="text-muted mb-0" id="resultsCount" aria-live="polite">جارٍ تحميل الفعاليات...</p>
+        </div>
+        <span class="badge text-bg-light border">تحديث مستمر</span>
+      </div>
+      <div class="row g-4" id="eventsContainer">
+        <div class="col-12"><div class="alert alert-info">جارٍ تحميل الفعاليات...</div></div>
+      </div>
+      <div id="noResults" class="alert alert-warning text-center d-none" role="status">
+        لا توجد فعاليات تطابق خيارات البحث. جرّب تغيير الفلاتر.
+      </div>
+      <section class="learning-project mt-5" aria-labelledby="learningProjectHeading">
+        <span class="badge text-bg-warning mb-2">مبادرة تعليمية</span>
+        <h2 id="learningProjectHeading" class="section-title">مشروع تعليمي تجريبي</h2>
+        <p class="mb-0">مساحة تجريبية للتعلّم بالممارسة، تتيح للطلاب استكشاف أفكار جديدة والعمل على أنشطة ومشروعات صغيرة تطوّر مهاراتهم وتحول المعرفة إلى تجربة عملية.</p>
+      </section>
+    </section>
+  </main>
+
+  <!-- تذييل الصفحة -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h4>تواصل معنا</h4>
+          <p class="mb-0">البريد: events@email.edu<br>الهاتف: <span dir="ltr">+963 00 000 0000</span></p>
+        </div>
+        <div class="col-md-6 mb-3">
+          <h4>تابعنا</h4>
+          <a href="#">فيسبوك</a>
+          <a href="#">إنستغرام</a>
+          <a href="#">يوتيوب</a>
+        </div>
+      </div>
+      <p class="copyright mb-0">© 2026 دليل فعاليات الجامعة الافتراضية - جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
